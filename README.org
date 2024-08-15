@@ -1,6 +1,8 @@
 #+startup: inlineimages
 #+title: TransSide, a *colorful* theme
 #+options: toc:t
+* Update
+Please check out [[https://github.com/skye-repos/thetasigma-emacs.git][thetasigma-emacs]] where I'm trying this again.
 
 * Why does this theme exist?
 Themes are dime a dozen in Emacs. Most of them are quite excellent, but they never quite satisfied my tastes. Popular themes like gruvbox, in my admittedly valueless opinion, are too muted. I don't like it when all the colors blend together. I was often left asking why use so many subtly different colors when the eye can't even parse that they are different?
