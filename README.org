@@ -1,0 +1,52 @@
+#+startup: inlineimages
+#+title: TransSide, a *colorful* theme
+#+options: toc:t
+
+* Why does this theme exist?
+Themes are dime a dozen in Emacs. Most of them are quite excellent, but they never quite satisfied my tastes. Popular themes like gruvbox, in my admittedly valueless opinion, are too muted. I don't like it when all the colors blend together. I was often left asking why use so many subtly different colors when the eye can't even parse that they are different?
+
+Though I am probably in the minority here, I was searching for a significantly more contrast-y look to my editor. I started on this project before I realized people like Prot did what I was trying to do but infinitely better. Prot's ef-themes and modus-vivendi in particular have much better visual rhythm than anything I will ever be able to accomplish. Having said that, I have grown accustomed to my theme, and it is tuned to my preferences. I only put it up here on github in the off-chance there is someone else like me.
+
+* Images
+[[images/dark.png]]
+[[images/light.png]]
+
+* Guiding Philosophy
+When I started out this theme, in its first iteration, it was a cheap knock-off of gruvbox with some colors changed here and there. But as i've worked on it, I've accrued some opinions.
+
+1) In any text based world, there are three kinds of elements involved.
+   - Elements that have an interactive element - for example links, region and highlight selections, text etc.
+   - Elements that are static - for example dates in org mode, titles of files, org-agenda entries etc
+   - Elements/UI that are neither of these - for example keywords in prog langs like 'setq' 'def' etc. These are static cause you don't change them directly but they are the means through which interaction with an element happens.
+
+   With this simple framework in mind, I chose three colors - pinks for interactions, blues for statics, and purples/lavenders for things that are both and neither.
+   It so happens that the two primary colors are those of the Trans flag. Thus, the name TransSide, with the word 'Side' coming from a similar theme I found on terminal.sexy called FarSide (iirc).
+
+2) Simplicity is key. It is quite common for themes to define several hundred colors which are all subtly related. I started out with only 6 colors, a bold and dimmed for each of the three main categories. I however found this too restrictive, so I eventually included a pastel range, brighter versions and a series of purples for level delimiters. Apart from one off uses of a certain color, the colors are still minimal in design, if not in practice. It is an active goal to simplify and streamline their usage.
+
+3) Contrast. As Prot has made famous the WCAG standards for contrast, I believe it needs no introduction. I have tried to adhere to the strictest degree, the AAA standard, with all the color combinations. I occasionally break it in places where I believe people won't be spending much time reading or don't actually need to read the text/just know it's there.
+
+4) Support. My goal is to eventually support as many packages as possible, outside of Emacs even. In the context of Emacs, my goal is to support as many packages as possible.
+
+* Installation
+The package isn't on =ELPA= or =MELPA= (yet). For the time being, one can install with straight using.
+
+#+begin_src emacs-lisp
+       (use-package TransSide
+         :straight (TransSide :type git :host github :repo "skye-repos/TransSide-theme")
+         :config
+         (load-theme 'TransSide-dark t))
+#+end_src
+
+If you're on Emacs 29 and up, I believe =package-vc-install= should also work similarly.
+
+#+begin_src emacs-lisp
+  (package-vc-install "https://www.github.com/skye-repos/TransSide-theme")
+  (load-theme 'TransSide-light t)
+#+end_src
+
+You are also of-course always welcome to git clone and manually load the theme.
+
+* More work to be done
+
+** TODO Create Inheritance schema from basic defined faces.

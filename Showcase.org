@@ -1,0 +1,79 @@
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+startup: overview inlineimages
+#+date: \today
+#+title: A File to Showcase a theme
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 26.3 (Org mode 9.3.6)
+
+* This is a top level heading
+  Hey Look, some text!! Isn't this cool?? [[file:Showcase.org::This is a top level heading][Org-links look like this]]. Highlighted regions look like this.
+
+  # Comments look like this
+
+  $This is a math face$
+  
+** This is a level 2 heading.
+   This is what a code block looks like in org mode.
+   #+begin_src emacs-lisp
+     (defvar 'my/Dummy)
+
+     (setq my/Dummy "This is what emacs-lisp looks like")
+
+     (defun test (1 2 3)
+            "This is a docstring"
+            (some-function '1 '2 '3))
+   #+end_src
+
+*** Wonder what a level 3 heading looks like?
+    #+begin_src latex
+      \documentclass[a4paper,12pt]{article}
+
+      \usepackage{geometry}
+      \usepackage{things}
+
+      \begin{document}
+
+      \section{This is a section.}
+
+      This is an inline equation $\Lambda = \int_{-\infty}^{\pi}\frac{\partial}{\partial x} f(x)$. \footnote{Here is a footnote.}
+
+      \end{document}
+    #+end_src
+
+**** You didn't think there was a 4th level did you??
+     Shell stuff looks like this
+     #+begin_src shell
+       export LANG=en_US.UTF-8
+
+       # Preferred editor for local and remote sessions
+       if [[ -n $SSH_CONNECTION ]]; then
+	 export EDITOR='emacsclient'
+       else
+	 export EDITOR='emacs'
+       fi
+
+       #change cd path variable
+       export CDPATH="$CDPATH:$HOME/Documents/SchoolStuff/:$HOME/Documents/SchoolStuff/ThesisUndergraduate/"
+
+       # Compilation flags
+       # export ARCHFLAGS="-arch x86_64"
+
+       ZSH_THEME="powerlevel10k/powerlevel10k"
+
+       ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
+       if [[ ! -d $ZSH_CACHE_DIR ]]; then
+	 mkdir $ZSH_CACHE_DIR
+       fi
+     #+end_src
+     
+***** MORE LEVELS
+****** EEEEEEE
+******* ☛TODO This is a todo face
+DEADLINE: <2022-09-29 Thu> SCHEDULED: <2022-09-09 Fri>
+- State "⚑WAITING"   from "⚑WAITING"   [2022-09-29 Thu 10:11]
+- State "⚑WAITING"   from "☛TODO"      [2022-09-29 Thu 10:11]
+******* ✔DONE This is a done face
+******* ❌CANCELED Waiting and Cancelled have the same face as done in my config but you can change this in yours.
